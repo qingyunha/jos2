@@ -116,7 +116,7 @@ trap_init_percpu(void)
 
 	// Setup a TSS so that we get the right stack
 	// when we trap to the kernel.
-	tsp->ts_esp0 = KSTACKTOP - i * (KSTACKTOP + KSTKGAP);
+	tsp->ts_esp0 = KSTACKTOP - i * (KSTKSIZE + KSTKGAP);
 	tsp->ts_ss0 = GD_KD;
 	tsp->ts_iomb = sizeof(struct Taskstate);
 
