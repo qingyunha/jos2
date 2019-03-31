@@ -126,7 +126,7 @@ env_init(void)
 		envs[i].env_id = 0;
 		envs[i].env_link = envs + i + 1;
 	}
-	envs[i].env_link = NULL;
+	envs[NENV-1].env_link = NULL;
 	// Per-CPU part of the initialization
 	env_init_percpu();
 }
